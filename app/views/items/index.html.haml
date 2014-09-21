@@ -1,0 +1,18 @@
+- model_class = Item
+.page-header
+  %h1= t '.title', default: model_class.model_name.human.pluralize.titleize
+.itemList= render partial: "itemList.html.haml"
+
+= link_to t('.new', default: t("helpers.links.new")), new_project_item_path(@project), class: 'btn btn-primary'
+
+:javascript
+  function changeOpened(item_id) {
+    $.ajax({
+      type : "POST",
+      url: '/project/#{@project.id.to_s}/items/'+item_id+'/changeOpened',
+      data : "authenticity_token=#{CGI.escape(form_authenticity_token)}",
+      beforeSend: function(jqXHR, settings){
+        // setLoading(".itemList");
+      }
+    });
+  }

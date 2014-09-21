@@ -1,0 +1,31 @@
+%table.table
+  %thead
+    %tr
+      %th= t(:Id)
+      %th= t(:Description)
+      %th= t(:Done_question)
+      %th= t(:Created_at)
+      %th= t(:Actions)
+  %tbody
+    - @items_opened.each do |item|
+      %tr
+        %td= item.id
+        %td= link_to item.description, project_item_path(@project, item)
+        %td
+          %span.glyphicon.glyphicon-remove.form-control-feedback.text-danger
+        %td=l item.created_at
+        %td
+          = link_to t('.changeOpened', default: 'Close'), 'javascript:void(0);', class: 'btn btn-mini', onclick: "changeOpened(#{item.id.to_s});"
+          = link_to t('.edit', default: t('helpers.links.edit')), edit_project_item_path(@project, item), class: 'btn btn-mini'
+          = link_to t('.destroy', default: t('helpers.links.destroy')), project_item_path(@project, item), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: t(:Are_you_sure) )) }, class: 'btn btn-mini btn-danger'
+    - @items_closed.each do |item|
+      %tr.bg-success
+        %td= item.id
+        %td= link_to item.description, project_item_path(@project, item)
+        %td
+          %span.glyphicon.glyphicon-ok.form-control-feedback.text-success
+        %td>=l item.created_at
+        %td>
+          = link_to t('.changeOpened', default: 'Open'), 'javascript:void(0);', class: 'btn btn-mini', onclick: "changeOpened(#{item.id.to_s});"
+          = link_to t('.edit', default: t('helpers.links.edit')), edit_project_item_path(@project, item), class: 'btn btn-mini'
+          = link_to t('.destroy', default: t('helpers.links.destroy')), project_item_path(@project, item), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: t(:Are_you_sure) )) }, class: 'btn btn-mini btn-danger'

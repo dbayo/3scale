@@ -1,0 +1,12 @@
+= form_for [@project, @item], html: { class: 'form-horizontal' } do |f|
+  .form-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_area :description, class: 'form-control'
+  .form-group
+    = f.label :opened, class: 'control-label'
+    .controls
+      = f.check_box :opened
+  .form-actions
+    = f.submit nil, class: 'btn btn-primary'
+    = link_to t('.cancel', default: t("helpers.links.cancel")), project_items_path(@project), class: 'btn'

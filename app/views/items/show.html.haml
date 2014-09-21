@@ -1,0 +1,14 @@
+- model_class = Item
+.page-header
+  %h1=t '.title', default: model_class.model_name.human.titleize
+%dl.dl-horizontal
+  %dt
+    %strong= "#{model_class.human_attribute_name(:description)} :"
+  %dd= @item.description
+  %dt
+    %strong= "#{model_class.human_attribute_name(:opened)} :"
+  %dd= @item.opened
+.form-actions
+  = link_to t('.back', default: t("helpers.links.back")), project_items_path(@project), class: 'btn'
+  = link_to t('.edit', default: t("helpers.links.edit")), edit_project_item_path(@project, @item), class: 'btn'
+  = link_to t('.destroy', default: t("helpers.links.destroy")), project_item_path(@project, @item), method: 'delete', data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: t(:Are_you_sure) )) }, class: 'btn btn-danger'

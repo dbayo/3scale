@@ -1,0 +1,55 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  #Home Page
+  Title: 'Rent Boat & Sun'
+  The_sailing_experience_you: "The sailing experience you"
+  always_wanted: "always wanted!"
+  Home: "Home"
+  About: "About"
+  Ships: "Ships"
+  Contact: "Contact"
+  Welcome_abroad_sailor: "Welcome abroad sailor!"
+  Lorem_ipsum_dolor_sit: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod sapien eget pretium scelerisque. Aliquam nec erat erat. In lobortis imperdiet sodales. Aliquam erat volutpat. Fusce ac bibendum metus. Nunc id lacus non magna imperdiet fringilla sit amet ac sapien. Vestibulum est enim, sodales sit amet ultricies a, pretium nec lorem. Mauris varius tincidunt justo nec ultrices. Morbi auctor vel tortor at tincidunt. Maecenas euismod erat magna, quis ultrices orci consectetur at. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus in risus ultrices, tempus mauris a, auctor lorem. Nam bibendum dolor nec ligula malesuada facilisis."
+  Amazing_sailing_experiences_with_our_ships: "Amazing sailing experiences with our ships"
+  Available_boats: "Available boats"
+  Mediterreanean_madness: "Mediterreanean madness!"
+  days_ago: "%{days} days ago"
+  created_by: "By: @%{user}"
+  Mermaids_spotted: "Mermaids spotted!"
+  Black_Pearl: "Black Pearl"
+  The_Flying_Dutch: "The Flying Dutch"
+  More: "More"
+  Navigating_the_mediterranean: "Navigating the mediterranean, agean and black seas since 1739"
+
+  rent_20: 'Rent now and get 20% discount!!'
+
+  # Items
+  Id: "Id"
+  Description: "Description"
+  Done_question: "Done?"
+  Created_at: "Created_at"
+  Actions: "Actions"
+  Are_you_sure: "Are you sure?"
+  buttons:
+    more: 'more'
+    rent_now: 'RENT NOW!'
